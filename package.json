@@ -1,0 +1,59 @@
+{
+  "name": "cygnisai-sdk",
+  "version": "1.0.0",
+  "description": "Official TypeScript/JavaScript SDK for the CygnisAI API",
+  "author": "Simon CHUSSEAU <cygnis.ai@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/Simonc44/cygnisai-sdk-typescript#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Simonc44/cygnisai-sdk-typescript.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Simonc44/cygnisai-sdk-typescript/issues"
+  },
+  "keywords": [
+    "cygnisai",
+    "ai",
+    "llm",
+    "sdk",
+    "typescript",
+    "inference"
+  ],
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENCE"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src tests",
+    "prepublishOnly": "npm run build && npm run typecheck && npm test"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.41",
+    "@vitest/coverage-v8": "^1.6.1",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3",
+    "vitest": "^1.6.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
